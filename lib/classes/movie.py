@@ -49,8 +49,9 @@ class Movie:
 
     @classmethod
     def highest_rated(cls):
-        movie_ratings = {}
-        for movie in cls.all:
-            if movie not in movie_ratings:
-                movie_ratings[movie] = movie.average_rating()
-        return max(movie_ratings, key=movie_ratings.get)
+        # movie_ratings = {}
+        # for movie in cls.all:
+        #     if movie not in movie_ratings:
+        #         movie_ratings[movie] = movie.average_rating()
+        # return max(movie_ratings, key=movie_ratings.get)
+        return max(cls.all, key=lambda movie: movie.average_rating())
